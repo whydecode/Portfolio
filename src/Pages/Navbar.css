@@ -61,6 +61,10 @@ nav{
 
 /*Stying for small screens*/
 @media screen and (max-width: 800px){
+    #name{
+        text-align: left;
+        padding: 15px;
+    }
     nav{
         position: fixed;
         z-index: 3;
@@ -117,4 +121,12 @@ nav{
 }
 .toggle .line3{
     transform: rotate(45deg) translate(-5px,-6px);
+}
+
+#name{
+    text-decoration: none;
+    width: 250px;
+    align-self: center;
+    color: rgb(189, 189, 189);
+    font-size: 20px;
 }

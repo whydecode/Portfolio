@@ -26,6 +26,11 @@ function Navbar() {
         <div className="line2"></div>
         <div className="line3"></div>
       </div>
+
+      <a href="#" id="name" className={link} onClick={handleClick}>
+        Rahul Agarwal
+      </a>
+
       <ul className={navLinks}>
         <li className={link} onClick={handleClick}>
           <a href="#">Home</a>
