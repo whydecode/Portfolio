@@ -31,11 +31,13 @@ nav{
     justify-content: space-evenly;
     align-items: center;
     text-transform: uppercase;
+    
 }
 .nav-links li a{
     text-decoration: none;
     margin: 0 0.7vw;
     color: var(--textColor);
+    font-size: 20px;
 }
 
 .nav-links li {
@@ -103,6 +105,7 @@ nav{
         clip-path: circle(1500px at 100% 0%);
         -webkit-clip-path: circle(1500px at 100% 0%);
         pointer-events: all;
+        margin-top: 0;
     }
     .nav-links li{
         opacity: 0;

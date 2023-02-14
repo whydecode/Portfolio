@@ -39,6 +39,9 @@ function Navbar() {
           <a href="#about">About</a>
         </li>
         <li className={link} onClick={handleClick}>
+          <a href="#projects">Projects</a>
+        </li>
+        <li className={link} onClick={handleClick}>
           <a href="#contact">Contact</a>
         </li>
       </ul>

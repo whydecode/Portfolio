@@ -3,7 +3,7 @@ import Typewriter from "typewriter-effect";
 import resume from "./Resume.pdf";
 import profile from "./profile.jpg";
 import Navbar from "./Navbar";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useInView } from "framer-motion";
 import call from "./call.png";
 import mail from "./mail.png";
@@ -12,26 +12,44 @@ import Background from "./Background";
 function Home() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const mainRef = useRef(null);
+  const mainInView = useInView(mainRef, { once: true });
   const barRef = useRef(null);
   const barInView = useInView(barRef, { once: true });
   const contact = useRef(null);
   const contactInView = useInView(contact, { once: true });
   const profileRef = useRef(null);
-  const profileInView = useInView(profileRef, {once: true})
+  const profileInView = useInView(profileRef, { once: true });
+  const projectRef = useRef(null);
+  const projectInView = useInView(projectRef, { once: true });
+  const [projectClicked, setProjectClicked] = useState([false, false]);
+  const formRef = useRef(null);
+  const formInView = useInView(formRef, { once: true });
+  function handleClick(index) {
+    projectClicked[index] = !projectClicked[index];
+    setProjectClicked([...projectClicked]);
+  }
   return (
     <div className="App">
       <Background />
       <header>
         <Navbar />
       </header>
-      <div className="sideDiv">
-        <div className="middle">
+      <div className="sideDiv" ref={mainRef}>
+        <div
+          className="middle"
+          style={{
+            transform: mainInView ? "none" : "translatey(-200px)",
+            opacity: mainInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}
+        >
           <p>Hi, I am</p>
           <div className="typewriter">
             <Typewriter
               onInit={(typewriter) => {
                 typewriter
-
+                  .pauseFor(800)
                   .typeString("Rahul Agarwal")
 
                   .start();
@@ -151,7 +169,7 @@ function Home() {
           </div>
 
           <div
-          ref={profileRef}
+            ref={profileRef}
             className="side"
             style={{
               transform: profileInView ? "none" : "translateY(-200px)",
@@ -163,6 +181,89 @@ function Home() {
           </div>
         </div>
       </div>
+      {/* ------------------- PROJECTS ------------------ */}
+
+      <div className="projects" ref={projectRef} id="projects">
+        <h1>Projects</h1>
+        <div
+          className="projectDiv"
+          style={{
+            transform: projectInView ? "none" : "translateX(-200px)",
+            opacity: projectInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}
+        >
+          <div className="project project1">
+            <div className="bgImage1"></div>
+            <div
+              className="projectContent"
+              onClick={() => handleClick(0)}
+              style={{ animation: projectClicked[0] ? "rotation 0.2s" : null }}
+            >
+              <div
+                style={{ display: projectClicked[0] ? "none" : "block" }}
+                className="projectMain"
+              >
+                <h1>WORDLE</h1>
+                <p>
+                  Wordle is a web-based word game created and developed by Welsh
+                  software engineer Josh Wardle and owned and published by the
+                  New York Times Company since 2022. Players have six attempts
+                  to guess a five-letter word, with feedback given for each
+                  guess in the form of colored tiles indicating when letters
+                  match or occupy the correct position.
+                </p>
+              </div>
+              <div
+                style={{ display: projectClicked[0] ? "block" : "none" }}
+                className="projectMain"
+              >
+                <h1>WORDLE</h1>
+                <a href="https://whydecode.github.io/wordle" target="_blank">
+                  VISIT
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="project project2">
+            <div className="bgImage2"></div>
+            <div
+              className="projectContent"
+              onClick={() => handleClick(1)}
+              style={{ animation: projectClicked[1] ? "rotation 0.2s" : null }}
+            >
+              <div
+                style={{ display: projectClicked[1] ? "none" : "block" }}
+                className="projectMain"
+              >
+                <h1>TESLA-Clone</h1>
+                <p>
+                  Tesla is an American multinational automotive, artificial
+                  intelligence, and clean energy company headquartered in
+                  Austin, Texas. Tesla designs and manufactures electric
+                  vehicles (electric cars and trucks), battery energy storage
+                  from home to grid-scale, solar panels and solar roof tiles,
+                  and related products and services.
+                </p>
+              </div>
+              <div
+                style={{ display: projectClicked[1] ? "block" : "none" }}
+                className="projectMain"
+              >
+                <h1>TESLA-Clone</h1>
+                <a
+                  href="https://whydecode.github.io/tesla-clone"
+                  target="_blank"
+                >
+                  VISIT
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ------------------- CONTACTS ------------------ */}
       <div id="contact" className="contact">
         <div
           id="content"
@@ -198,7 +299,15 @@ function Home() {
             </a>
           </div>
         </div>
-        <div className="formdiv">
+        <div
+          className="formdiv"
+          ref={formRef}
+          style={{
+            transform: formInView ? "none" : "translateX(200px)",
+            opacity: formInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}
+        >
           <form name="contact" method="post" onSubmit="submit">
             <h2>Contact</h2>
             <input type="hidden" name="form-name" value="contact" />
