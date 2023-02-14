@@ -1,17 +1,19 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.9a155991.css",
-    "main.js": "/Portfolio/static/js/main.c59b2eb5.js",
+    "main.css": "/Portfolio/static/css/main.d0698a38.css",
+    "main.js": "/Portfolio/static/js/main.79e378bd.js",
     "static/js/787.128fc6e9.chunk.js": "/Portfolio/static/js/787.128fc6e9.chunk.js",
     "static/media/profile.jpg": "/Portfolio/static/media/profile.2061b20c70b9b69e31b4.jpg",
+    "static/media/tesla.png": "/Portfolio/static/media/tesla.41587e8a3dee1cdbc4d7.png",
     "static/media/Resume.pdf": "/Portfolio/static/media/Resume.e0bce61de295f0b43ea3.pdf",
+    "static/media/background.jpg": "/Portfolio/static/media/background.f00761b30b91fc76c087.jpg",
     "index.html": "/Portfolio/index.html",
-    "main.9a155991.css.map": "/Portfolio/static/css/main.9a155991.css.map",
-    "main.c59b2eb5.js.map": "/Portfolio/static/js/main.c59b2eb5.js.map",
+    "main.d0698a38.css.map": "/Portfolio/static/css/main.d0698a38.css.map",
+    "main.79e378bd.js.map": "/Portfolio/static/js/main.79e378bd.js.map",
     "787.128fc6e9.chunk.js.map": "/Portfolio/static/js/787.128fc6e9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9a155991.css",
-    "static/js/main.c59b2eb5.js"
+    "static/css/main.d0698a38.css",
+    "static/js/main.79e378bd.js"
   ]
 }
