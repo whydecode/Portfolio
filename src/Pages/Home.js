@@ -1,8 +1,5 @@
 import "./Home.css";
 import Typewriter from "typewriter-effect";
-import github from "./github.svg";
-import linkedin from "./linkedin.svg";
-import leetcode from "./leetcode.png";
 import resume from "./Resume.pdf";
 import profile from "./profile.jpg";
 import Navbar from "./Navbar";
@@ -11,6 +8,7 @@ import { useInView } from "framer-motion";
 import call from "./call.png";
 import mail from "./mail.png";
 import map from "./map.png";
+import Background from "./Background";
 function Home() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -18,45 +16,15 @@ function Home() {
   const barInView = useInView(barRef, { once: true });
   const contact = useRef(null);
   const contactInView = useInView(contact, { once: true });
+  const profileRef = useRef(null);
+  const profileInView = useInView(profileRef, {once: true})
   return (
     <div className="App">
+      <Background />
       <header>
         <Navbar />
       </header>
       <div className="sideDiv">
-        <div className="social">
-          <ul>
-            <li>
-              <a href="https://www.linkedin.com/in/rahul2205/">
-                <img src={linkedin} className="App-logo" alt="LinkedIn" />
-              </a>
-            </li>
-            <li>
-              <a href="https://leetcode.com/rahulagarwal2205/">
-                <img src={leetcode} className="App-logo" alt="LinkedIn" />
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/whydecode">
-                <img src={github} className="App-logo" alt="Github" />
-              </a>
-            </li>
-
-            <div className="vertLine"></div>
-          </ul>
-        </div>
-        <div className="myemail">
-          <ul>
-            <li className="emailid">
-              <span className="verticalEmail">
-                <a href="mailto: rahulagarwal2205@gmail.com">
-                  rahulagarwal2205@gmail.com
-                </a>
-              </span>
-            </li>
-            <li className="lineright"></li>
-          </ul>
-        </div>
         <div className="middle">
           <p>Hi, I am</p>
           <div className="typewriter">
@@ -73,9 +41,9 @@ function Home() {
           <h2>Welcome to my portfolio website.</h2>
           <h2>Please feel free to check out my portfolio</h2>
           <h2>website that showcase my skills and resume below.</h2>
-        </div>
-        <div className="belowMid">
-          <a href={resume}>Resume</a>
+          <div className="belowMid">
+            <a href={resume}>Resume</a>
+          </div>
         </div>
       </div>
       <div id="about">
@@ -121,7 +89,7 @@ function Home() {
               </li>
               <li>
                 CSS
-                <span className="progress" >
+                <span className="progress">
                   <span
                     className="progress-value"
                     id="two"
@@ -136,7 +104,7 @@ function Home() {
               </li>
               <li>
                 JavaScript
-                <span className="progress" >
+                <span className="progress">
                   <span
                     className="progress-value"
                     id="three"
@@ -151,7 +119,7 @@ function Home() {
               </li>
               <li>
                 React
-                <span className="progress" >
+                <span className="progress">
                   <span
                     className="progress-value"
                     id="four"
@@ -166,7 +134,7 @@ function Home() {
               </li>
               <li>
                 Java
-                <span className="progress" >
+                <span className="progress">
                   <span
                     className="progress-value"
                     id="five"
@@ -182,22 +150,30 @@ function Home() {
             </ul>
           </div>
 
-          <div className="side">
+          <div
+          ref={profileRef}
+            className="side"
+            style={{
+              transform: profileInView ? "none" : "translateY(-200px)",
+              opacity: profileInView ? 1 : 0,
+              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+          >
             <img src={profile} className="profile" alt="profile" />
           </div>
         </div>
       </div>
       <div id="contact" className="contact">
-        <div id="content" ref={contact}>
-          <h1
-            style={{
-              transform: contactInView ? "none" : "translateX(-200px)",
-              opacity: contactInView ? 1 : 0,
-              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-            }}
-          >
-            Get In Touch
-          </h1>
+        <div
+          id="content"
+          ref={contact}
+          style={{
+            transform: contactInView ? "none" : "translateX(-200px)",
+            opacity: contactInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}
+        >
+          <h1>Get In Touch</h1>
           <br />
           <h2>Location</h2>
           <p>
