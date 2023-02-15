@@ -5,19 +5,21 @@
   --mainColor: #222831;
   --textColor: #EEEEEE;
 }
-
+.complete{
+  background-color: transparent;
+  width: 100% !important;
+}
 .App {
   text-align: center;
   width: 100% !important;
   background-color: transparent;
   position: relative;
-  z-index: 3;
 }
 
 
 .sideDiv{
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
@@ -26,13 +28,16 @@
   border-bottom: 1px solid rgb(189, 189, 189);
 }
 .middle{
-  position: relative;
+  z-index: 10;
+  display: block;
+  flex-wrap: wrap;
   height: auto;
   width: auto;
   text-align: left;
-  padding: 50px;
-  
+  padding: 50px 20px 0 30px;
   border-radius: 50%;
+  max-width: 600px;
+  height: fit-content;
 }
 .middle h2{
     font-weight: 600;
@@ -43,6 +48,21 @@
   color: var(--contrast);
 
 }
+.hello{
+  width: 25px;
+  transform-origin: right bottom;
+  transform: rotateZ(30deg);
+  animation: shake 2s infinite ease-in-out;
+  margin-right: 10px;
+}
+@keyframes shake {
+  0%{transform: rotateZ(30deg);}
+  5%{transform: rotateZ(60deg);}
+  10%{transform: rotateZ(30deg);}
+  15%{transform: rotateZ(60deg);}
+  20%{transform: rotateZ(30deg);}
+}
+
 .typewriter{
   font-size: calc(25px + 2vw);
   color: var(--textColor);
@@ -51,7 +71,6 @@
   margin-top: 50px;
   display: flex;
   align-self: auto;
-  transform: translateX(-70px);
   margin-bottom: 100px;
   align-items: center;
   justify-content: center;
@@ -74,7 +93,16 @@
   color: var(--mainColor);
   border-color: var(--mainColor);
 }
+.clipart{
+  z-index: 10;
+  display: flex;
+}
 
+.clipart > img{
+  padding:0 0 20px 20px;
+  width: 600px;
+  max-width: 90%;
+}
 
 @media (max-height:800px){
     .social{
@@ -147,12 +175,30 @@
     
 }
 .content ul{
+  z-index: 11;
     list-style: none;
     color: var(--textColor);
     font-family: 'Source Sans Pro', sans-serif;
     padding: 0;
 }
+
+.skillList > li{
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+.skillList > li > .item1{
+  display: flex;
+}
+.skillList > li > .item1 > img{
+  width: 50px !important;
+  height: 50px !important;
+  padding: 20px 20px 0 0;
+}
+
 .side{
+  z-index: 10;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -160,13 +206,13 @@
 }
 
 .profile{
+  z-index: 10;
     max-width: 30vw;
     outline: 2px solid var(--textColor);
     outline-offset: 15px;
     border-radius: 5px;
     z-index: 10;
 }
-
 
 .content p{
     color: var(--textColor);
@@ -191,9 +237,10 @@
     
 }
 
-
-
 .progress {
+  display: block;
+  width: 100%;
+  z-index: 10;
   background: rgb(135, 135, 135);
   justify-content: flex-start;
   border-radius: 100px !important;
@@ -201,15 +248,16 @@
   position: relative;
   padding: 0 5px;
   display: flex;
-  height: 25px !important;
+  height: 21px !important;
   max-width: 500px;
   margin-top: 5px;
   color: var(--mainColor);
+  min-width: 250px;
 }
 .progress-value {
+  z-index: 10;
   border-radius: 100px;
-  background: var(--contrast);
-  height: 20px;
+  height: 15px;
   font-size: 13px;
   font-weight: 600;
   padding-left: 10px;
@@ -218,23 +266,27 @@
 }
 #one{
   width: 80%;
-  
+  background-color: rgb(253, 94, 36);
 }
 
 #two{
   width: 80%;
+  background-color: rgb(50, 94, 190);
 }
 
 #three{
   width: 70%;
+  background-color: rgb(200, 200, 31);
 }
 
 #four{
-  width: 60%;
+  width: 70%;
+  background-color: rgb(58, 203, 251);
 }
 
 #five{
   width: 80%;
+  background-color: rgb(199, 46, 3);
 }
 
 .contact{
@@ -419,10 +471,11 @@ form h2{
 }
 
 .project1>.projectContent{
-  background-color: rgba(129, 129, 129, 0.6);  
+  background-color: rgba(129, 129, 129, 0.8);
+  color: #222831;  
 }
 .project2>.projectContent{
-  background-color: rgba(44, 44, 44, 0.6);
+  background-color: rgba(44, 44, 44, 0.9);
   border: 2px solid var(--mainColor);
 }
 

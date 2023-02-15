@@ -12,7 +12,7 @@ function Navbar() {
   const hamburger = open ? "hamburger toggle" : "hamburger";
   const [colorChange, setColorchange] = useState(false);
   const changeNavbarColor = () => {
-    if (window.scrollY >= 80) {
+    if (window.scrollY >= 200) {
       setColorchange(true);
     } else {
       setColorchange(false);

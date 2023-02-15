@@ -16,7 +16,7 @@ const Background = () => {
 
   const backgroundStyle = {
     background: `url(${background}) repeat 0 0 `,
-    backgroundPosition: `5% ${scrollPos * 0.2}px`,
+    backgroundPosition: `5% ${scrollPos * 0.1}px`,
     backgroundSize: "stretch",
     backgroundRepeat: "repeat",
     height: "100vh",

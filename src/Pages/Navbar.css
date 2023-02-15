@@ -31,7 +31,6 @@ nav{
     justify-content: space-evenly;
     align-items: center;
     text-transform: uppercase;
-    
 }
 .nav-links li a{
     text-decoration: none;
