@@ -1,8 +1,3 @@
-:root {
-  --contrast: #00ADB5;
-  --mainColor: #222831;
-  --textColor: #EEEEEE;
-}
 nav{
     height: 4.5rem;
     width: 100vw;
@@ -60,7 +55,7 @@ nav{
 .hamburger div{
     width: 30px;
     height:3px;
-    background: #f2f5f7;
+    background: var(--textColor);
     margin: 5px;
     transition: all 0.3s ease;
 }

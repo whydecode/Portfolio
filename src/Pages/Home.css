@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Moon+Dance&family=Pacifico&family=Satisfy&display=swap');@import url('https://fonts.googleapis.com/css2?family=Moon+Dance&family=Pacifico&family=Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
 :root {
-  --contrast: #00ADB5;
-  --mainColor: #222831;
-  --textColor: #EEEEEE;
+  --contrast: #F99417;
+  --mainColor: white;
+  --textColor: #191A19;
+}
+html{
+  scroll-behavior: smooth;
 }
 .complete{
   background-color: transparent;
@@ -14,8 +17,8 @@
   width: 100% !important;
   background-color: transparent;
   position: relative;
+  scroll-behavior: smooth;
 }
-
 
 .sideDiv{
   display: flex;
@@ -111,7 +114,7 @@
     
   }
 @media (max-width:600px){
-
+  
     .myemail{
       display: none !important;
     }
@@ -130,18 +133,14 @@
     }
     
   }
-  
-@media (max-width:600px){
-    
 
-  }
   @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inconsolata&display=swap');@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 #about {
   text-align: center;
   align-items: center;
   justify-content: center;
   width: 100%;
-  background-color: var(--mainColor);
+  background-color: var(--textColor);
   min-height: 100vh;
   display: flex;
   border-bottom: 1px solid rgb(189, 189, 189);
@@ -149,10 +148,10 @@
 }
 .aboutTitle{
     font-family: 'Courier New', Courier, monospace;
-    color: var(--textColor);
+    color: var(--mainColor);
 }
 .maincontent{
-    color: var(--mainColor);
+    color: var(--textColor);
     align-items: center;
     justify-content: center;
     margin-bottom: 50px;
@@ -177,7 +176,7 @@
 .content ul{
   z-index: 11;
     list-style: none;
-    color: var(--textColor);
+    color: var(--mainColor);
     font-family: 'Source Sans Pro', sans-serif;
     padding: 0;
 }
@@ -208,20 +207,42 @@
 .profile{
   z-index: 10;
     max-width: 30vw;
-    outline: 2px solid var(--textColor);
+    outline: 2px solid var(--mainColor);
     outline-offset: 15px;
     border-radius: 5px;
     z-index: 10;
 }
 
 .content p{
-    color: var(--textColor);
+    color: var(--mainColor);
 }
 .content h1{
     margin-bottom: 50px;
 }
 
 @media (max-width:1000px) {
+  .projectCard{
+    flex-wrap: wrap !important;
+    padding-bottom: 20px;
+  }
+  .projectContent, .projectImage{
+    width: 90% !important;
+  }
+  .projectContent{
+    width: 100% !important;
+  }
+
+  .projectInfo{
+    width: 100% !important;
+  }
+  .projectButtons{
+    margin-top: 30px !important;
+    margin-bottom: 20px;
+  }
+  .projectButtons > a{
+    padding: 10px 30px !important;
+  }
+
   #about{
     width: fit-content;
   }
@@ -251,7 +272,7 @@
   height: 21px !important;
   max-width: 500px;
   margin-top: 5px;
-  color: var(--mainColor);
+  color: var(--textColor);
   min-width: 250px;
 }
 .progress-value {
@@ -294,7 +315,7 @@
   align-items: center;
   width: 100%;
   max-width: 100vw;
-  background-color: var(--mainColor);
+  background-color: var(--textColor);
   min-height: 100%;
   display: flex;
   min-height: 100vh;
@@ -305,7 +326,7 @@
 
 #content{
   text-align: left;
-  color: var(--textColor);
+  color: var(--mainColor);
   min-width: 300px;
   float: left;
   align-content: center;
@@ -320,7 +341,7 @@
 }
 
 .contact-link{
-  color: var(--textColor);
+  color: var(--mainColor);
   text-decoration: none;
 }
 
@@ -353,7 +374,7 @@ form input,textarea{
   margin: 10px;
   padding-bottom: 10px;
   border: none;
-  border-bottom: 2px solid var(--textColor);
+  border-bottom: 2px solid var(--mainColor);
   width: 400px;
   font-size: 15px;
   background-color: transparent !important;
@@ -366,7 +387,7 @@ form input:focus{
 }
 
 form h2{
-  color: var(--textColor);
+  color: var(--mainColor);
   align-self: flex-start;
 }
 #submitbutton{
@@ -386,11 +407,13 @@ form h2{
 }
 
 .projects{
+  padding-bottom: 5vw;
   text-align: center;
   width: 100%;
   background-color: var(--mainColor);
   min-height: 100vh;
   border-bottom: 1px solid rgb(189, 189, 189);
+  
 }
 
 .projects > h1{
@@ -402,110 +425,61 @@ form h2{
   font-size: calc(25px + 1vw);
 }
 
-.project{
-  width: 40vw !important;
-  height: 70vh !important;
-  min-width: 300px !important;
-  min-height: 400px !important;
-  max-width: 500px !important;
-  background-color: #EEEEEE;
-  margin: 10px 50px;
+.projectCard{
+  width: 70%;
+  margin: 20px ;
+  overflow: hidden;
   display: flex;
-  text-align: center;
-  align-items: center;
   justify-content: center;
-  z-index: 10;
-  transition: transform 200ms ease-out;
+  box-shadow: 3px 3px 10px grey;
+}
+.projectImage{
+  width: 50%;
+  margin: 2%;
+  transition: all 0.3s ease-in;
+}
+.projectImage > img{
+  width: 70%;
   border-radius: 10px;
-}
 
-.projectDiv{
-  display: flex;
-  text-align: center;
-  align-items: center;
+}
+.projectInfo{
+  padding-top: 15px;
+  width: 50%;
+  height: 100%;
   justify-content: center;
-  z-index: 10;
-  flex-wrap: wrap;
-}
 
-.project:hover {
-  transform: scale(1);
-  cursor: pointer;
-}
-
-.project:not(:hover) {
-  transform: scale(0.9);
-}
-
-.bgImage1{
-  background-image: url("./wordle.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 100%;
-  width: 100%;
-  filter: blur(3px);
-}
-.bgImage2{
-  background-image: url("./tesla.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 100%;
-  width: 100%;
-  filter: blur(3px);
 }
 
 .projectContent{
-  position: absolute;
-  z-index: 11;
-  height: 80% !important;
-  width: 80% !important;
   display: flex;
-  align-items: center;
   justify-content: center;
-  border: 2px solid white;
-  color: var(--textColor);
-  /* animation: rotation 0.2s; */
-  animation-iteration-count: 1;
+  flex-wrap: wrap;
 }
 
-.project1>.projectContent{
-  background-color: rgba(129, 129, 129, 0.8);
-  color: #222831;  
+.projectCard:hover .projectImage{
+  transform: scale(1.05);
 }
-.project2>.projectContent{
-  background-color: rgba(44, 44, 44, 0.9);
-  border: 2px solid var(--mainColor);
+.projectButtons{
+  margin-top: 20%;
+  margin-bottom: 20px;
+  width: 100%;
 }
-
-@keyframes rotation {
-  0%{
-    transform: rotateY(180deg);
-  }
-}
-.projectMain{
-  padding: 10px;
-}
-.projectMain > p{
-  font-size: calc(15px + 0.5vw);
-}
-
-.projectMain > a{
-  align-self: center;
-  text-decoration: none;
-  border: 2.5px solid var(--contrast) ;
-  border-radius: 5px;
-  padding: 8px 12px;
-  color: var(--contrast);
-  transition: 0.5s;
-  font-size: 30px;
-  font-weight: 500;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-.projectMain > a:hover{
-  background-color: var(--contrast);
+.projectButtons > a{
+  padding: 10px 40px;
+  border-radius: 50px;
+  border: none;
+  background-color: var(--textColor);
   color: var(--mainColor);
-  border-color: var(--mainColor);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: calc(10px + 0.5vw);
+  text-decoration: none;
+  margin: 20px;
+}
+.projectButtons > a:hover{
+  background-color: rgb(55, 55, 55);
+}
+.projectInfo p{
+  color: grey;
 }

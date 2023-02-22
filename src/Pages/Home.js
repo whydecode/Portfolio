@@ -15,7 +15,9 @@ import reactLogo from "./Images/react-icon.png";
 import javaLogo from "./Images/java.png";
 import clipart from "./Images/clipart.png";
 import hello from "./Images/hello.png";
-import Background from "./Background";
+import tesla from "./Images/tesla.png";
+import wordle from "./Images/wordle.png";
+import samsung from "./Images/samsung.png";
 function Home() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -39,7 +41,6 @@ function Home() {
   return (
     <div className="complete">
       <div className="App">
-        <Background />
         <header>
           <Navbar />
         </header>
@@ -243,82 +244,69 @@ function Home() {
 
         <div className="projects" id="projects">
           <h1>Projects</h1>
-          <div
-            ref={projectRef}
-            className="projectDiv"
-            style={{
-              transform: projectInView ? "none" : "translateX(-200px)",
-              opacity: projectInView ? 1 : 0,
-              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-            }}
-          >
-            <div className="project project1">
-              <div className="bgImage1"></div>
-              <div
-                className="projectContent"
-                onClick={() => handleClick(0)}
-                style={{
-                  animation: projectClicked[0] ? "rotation 0.2s" : null,
-                }}
-              >
-                <div
-                  style={{ display: projectClicked[0] ? "none" : "block" }}
-                  className="projectMain"
-                >
-                  <h1>WORDLE</h1>
-                  <p>
-                    Wordle is a web-based word game created and developed by
-                    Welsh software engineer Josh Wardle and owned and published
-                    by the New York Times Company since 2022. Players have six
-                    attempts to guess a five-letter word, with feedback given
-                    for each guess in the form of colored tiles indicating when
-                    letters match or occupy the correct position.
-                  </p>
-                </div>
-                <div
-                  style={{ display: projectClicked[0] ? "block" : "none" }}
-                  className="projectMain"
-                >
-                  <h1>WORDLE</h1>
-                  <a href="https://whydecode.github.io/wordle" target="_blank">
-                    VISIT
+          <div className="projectContent">
+            <div className="projectCard">
+              <div className="projectImage">
+                <img src={samsung} alt="" />
+              </div>
+              <div className="projectInfo">
+                <h2>Samsung Clone</h2>
+                <p>Web Development, Web Design</p>
+                <p>React, Sass</p>
+                <div className="projectButtons">
+                  <a
+                    href="https://whydecode-samsung.netlify.app/"
+                    target="_blank"
+                  >
+                    Link
+                  </a>
+                  <a
+                    href="https://github.com/whydecode/samsung-clone"
+                    target="_blank"
+                  >
+                    Code
                   </a>
                 </div>
               </div>
             </div>
-            <div className="project project2">
-              <div className="bgImage2"></div>
-              <div
-                className="projectContent"
-                onClick={() => handleClick(1)}
-                style={{
-                  animation: projectClicked[1] ? "rotation 0.2s" : null,
-                }}
-              >
-                <div
-                  style={{ display: projectClicked[1] ? "none" : "block" }}
-                  className="projectMain"
-                >
-                  <h1>TESLA-Clone</h1>
-                  <p>
-                    Tesla is an American multinational automotive, artificial
-                    intelligence, and clean energy company headquartered in
-                    Austin, Texas. Tesla designs and manufactures electric
-                    vehicles (electric cars and trucks), battery energy storage
-                    from home to grid-scale, solar panels and solar roof tiles,
-                    and related products and services.
-                  </p>
-                </div>
-                <div
-                  style={{ display: projectClicked[1] ? "block" : "none" }}
-                  className="projectMain"
-                >
-                  <h1>TESLA-Clone</h1>
+            <div className="projectCard">
+              <div className="projectImage">
+                <img src={tesla} alt="" />
+              </div>
+              <div className="projectInfo">
+                <h2>Tesla Clone</h2>
+                <p>Web Development, Web Design</p>
+                <p>React</p>
+                <div className="projectButtons">
                   <a
-                    href="https://whydecode.github.io/tesla-clone"
+                    href="https://whydecode.github.io/tesla-clone/"
                     target="_blank"
                   >
-                    VISIT
+                    Link
+                  </a>
+                  <a
+                    href="https://github.com/whydecode/tesla-clone"
+                    target="_blank"
+                  >
+                    Code
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="projectCard">
+              <div className="projectImage">
+                <img src={wordle} alt="" />
+              </div>
+              <div className="projectInfo">
+                <h2>Wordle</h2>
+                <p>Web Development</p>
+                <p>React</p>
+                <div className="projectButtons">
+                  <a href="https://whydecode.github.io/wordle/" target="_blank">
+                    Link
+                  </a>
+                  <a href="https://github.com/whydecode/wordle" target="_blank">
+                    Code
                   </a>
                 </div>
               </div>
