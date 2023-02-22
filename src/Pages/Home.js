@@ -244,8 +244,15 @@ function Home() {
 
         <div className="projects" id="projects">
           <h1>Projects</h1>
-          <div className="projectContent">
-            <div className="projectCard">
+          <div className="projectContent" ref={projectRef}>
+            <div
+              className="projectCard"
+              style={{
+                transform: projectInView ? "none" : "translateX(-200px)",
+                opacity: projectInView ? 1 : 0,
+                transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+              }}
+            >
               <div className="projectImage">
                 <img src={samsung} alt="" />
               </div>
@@ -269,7 +276,14 @@ function Home() {
                 </div>
               </div>
             </div>
-            <div className="projectCard">
+            <div
+              className="projectCard"
+              style={{
+                transform: projectInView ? "none" : "translateX(-200px)",
+                opacity: projectInView ? 1 : 0,
+                transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.7s",
+              }}
+            >
               <div className="projectImage">
                 <img src={tesla} alt="" />
               </div>
@@ -293,7 +307,14 @@ function Home() {
                 </div>
               </div>
             </div>
-            <div className="projectCard">
+            <div
+              className="projectCard"
+              style={{
+                transform: projectInView ? "none" : "translateX(-200px)",
+                opacity: projectInView ? 1 : 0,
+                transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.9s",
+              }}
+            >
               <div className="projectImage">
                 <img src={wordle} alt="" />
               </div>
