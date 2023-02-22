@@ -54,7 +54,6 @@ function Home() {
             }}
           >
             <p>
-              {" "}
               <img src={hello} alt="hello" className="hello" /> Hi, I am
             </p>
             <div className="typewriter">
@@ -106,14 +105,16 @@ function Home() {
                 Computer Engineering at Thapar Institute of Engineering and
                 Technology. I am passionate about front end designing and full
                 stack development, and am always striving to improve and learn
-                more. I am excited to share my portfolio with you and I hope
-                that it showcases my abilities and the quality of my work.
-                Please feel free to contact me if you have any questions or
-                would like to work together on a project. Thank you for
-                visiting!
+                more.
+              </p>
+              <p>
+                I am excited to share my portfolio with you and I hope that it
+                showcases my abilities and the quality of my work. Please feel
+                free to contact me if you have any questions or would like to
+                work together on a project. Thank you for visiting!
               </p>
               <p>Some of my skills are listed below:</p>
-              <ul className="skillList">
+              <ul className="skillList" ref={barRef}>
                 <li>
                   <div className="item1">
                     <img src={htmlLogo} alt="HTML" />
@@ -123,7 +124,7 @@ function Home() {
                       a web browser.
                     </p>
                   </div>
-                  <span className="progress" ref={barRef}>
+                  <span className="progress">
                     <span
                       className="progress-value"
                       id="one"
@@ -189,7 +190,7 @@ function Home() {
                       interfaces based on components.
                     </p>
                   </div>
-                  <span className="progress" ref={barRef}>
+                  <span className="progress">
                     <span
                       className="progress-value"
                       id="four"

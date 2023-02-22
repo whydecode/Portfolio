@@ -7,7 +7,7 @@ nav{
     z-index: 10;
     transition: 0.2s;
     justify-content: space-between;
-    z-index: 20;
+    z-index: 1000;
 }
 .colorChange{
     height: 4rem;
@@ -72,7 +72,7 @@ nav{
     }
     nav{
         position: fixed;
-        z-index: 3;
+        z-index: 1000;
     }
     .hamburger{
         display:block;

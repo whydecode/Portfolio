@@ -31,28 +31,27 @@ html{
   border-bottom: 1px solid rgb(189, 189, 189);
 }
 .middle{
-  z-index: 10;
   display: block;
   flex-wrap: wrap;
   height: auto;
   width: auto;
   text-align: left;
-  padding: 50px 20px 0 30px;
+  padding: 50px 20px 0 25px;
   border-radius: 50%;
   max-width: 600px;
   height: fit-content;
 }
 .middle h2{
     font-weight: 600;
+    font-size: calc(18px + 0.3vw);
     color: var(--textColor);
 }
 .middle > p{
-  font-size: 30px;
+  font-size: calc(18px + 0.7vw);
   color: var(--contrast);
-
 }
 .hello{
-  width: 25px;
+  width: calc(15px + 0.5vw);
   transform-origin: right bottom;
   transform: rotateZ(30deg);
   animation: shake 2s infinite ease-in-out;
@@ -74,12 +73,10 @@ html{
   margin-top: 50px;
   display: flex;
   align-self: auto;
-  margin-bottom: 100px;
   align-items: center;
   justify-content: center;
 }
 .belowMid a{
-  
   text-decoration: none;
   border: 2.5px solid var(--contrast) ;
   border-radius: 5px;
@@ -97,7 +94,6 @@ html{
   border-color: var(--mainColor);
 }
 .clipart{
-  z-index: 10;
   display: flex;
 }
 
@@ -174,47 +170,47 @@ html{
     
 }
 .content ul{
-  z-index: 11;
-    list-style: none;
-    color: var(--mainColor);
-    font-family: 'Source Sans Pro', sans-serif;
-    padding: 0;
+  list-style: none;
+  color: var(--mainColor);
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 0;
 }
 
 .skillList > li{
-  z-index: 10;
   display: flex;
   flex-wrap: wrap;
   
 }
-.skillList > li > .item1{
+.item1{
   display: flex;
 }
-.skillList > li > .item1 > img{
+.item1 > img{
   width: 50px !important;
   height: 50px !important;
   padding: 20px 20px 0 0;
 }
+.item1{
+  font-size: calc(14px + 0.2vw);
+}
 
 .side{
-  z-index: 10;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    padding: 50px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 50px;
 }
 
 .profile{
-  z-index: 10;
-    max-width: 30vw;
-    outline: 2px solid var(--mainColor);
-    outline-offset: 15px;
-    border-radius: 5px;
-    z-index: 10;
+
+  max-width: 30vw;
+  outline: 2px solid var(--mainColor);
+  outline-offset: 15px;
+  border-radius: 5px;
 }
 
-.content p{
-    color: var(--mainColor);
+.content > p{
+  color: var(--mainColor);
+  font-size: calc(14px + 0.2vw);
 }
 .content h1{
     margin-bottom: 50px;
@@ -261,7 +257,6 @@ html{
 .progress {
   display: block;
   width: 100%;
-  z-index: 10;
   background: rgb(135, 135, 135);
   justify-content: flex-start;
   border-radius: 100px !important;
@@ -270,20 +265,18 @@ html{
   padding: 0 5px;
   display: flex;
   height: 21px !important;
-  max-width: 500px;
+  max-width: min(500px,90vw);
   margin-top: 5px;
   color: var(--textColor);
   min-width: 250px;
 }
 .progress-value {
-  z-index: 10;
   border-radius: 100px;
   height: 15px;
   font-size: 13px;
   font-weight: 600;
   padding-left: 10px;
   margin-right: 20px;
-  
 }
 #one{
   width: 80%;
@@ -331,7 +324,6 @@ html{
   float: left;
   align-content: center;
   margin: 50px 0;
-  z-index: 10;
   border-radius: 50%;
   padding: 50px;
 }
@@ -367,10 +359,9 @@ html{
   max-width: 90vw;
   overflow: hidden;
   margin: 50px 0;
-  z-index: 50;
 }
 form input,textarea{
-  color: var(--textColor);
+  color: var(--mainColor);
   margin: 10px;
   padding-bottom: 10px;
   border: none;
@@ -400,6 +391,8 @@ form h2{
   letter-spacing: 1px;
   cursor: pointer;
   margin-top: 20px;
+  position: relative;
+
 }
 #message{
   height: 80px;
