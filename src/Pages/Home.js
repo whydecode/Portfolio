@@ -18,6 +18,7 @@ import hello from "./Images/hello.png";
 import tesla from "./Images/tesla.png";
 import wordle from "./Images/wordle.png";
 import samsung from "./Images/samsung.png";
+import mystore from "./Images/mystore.png";
 function Home() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -246,6 +247,37 @@ function Home() {
         <div className="projects" id="projects">
           <h1>Projects</h1>
           <div className="projectContent" ref={projectRef}>
+            <div
+              className="projectCard"
+              style={{
+                transform: projectInView ? "none" : "translateX(-200px)",
+                opacity: projectInView ? 1 : 0,
+                transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+              }}
+            >
+              <div className="projectImage">
+                <img src={mystore} alt="Ecommerce" />
+              </div>
+              <div className="projectInfo">
+                <h2>Ecommerce Store</h2>
+                <p>MERN Stack Development</p>
+                <p>React, Node, Express, MongoDB</p>
+                <div className="projectButtons">
+                  <a
+                    href="https://mern-store-ml17.onrender.com/"
+                    target="_blank"
+                  >
+                    Link
+                  </a>
+                  <a
+                    href="https://github.com/whydecode/Ecommerce"
+                    target="_blank"
+                  >
+                    Code
+                  </a>
+                </div>
+              </div>
+            </div>
             <div
               className="projectCard"
               style={{

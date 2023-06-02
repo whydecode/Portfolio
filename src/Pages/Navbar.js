@@ -27,7 +27,7 @@ function Navbar() {
         <div className="line3"></div>
       </div>
 
-      <a href="/" id="name" onClick={handleClick}>
+      <a href="/" id="name" >
         Rahul Agarwal
       </a>
 
