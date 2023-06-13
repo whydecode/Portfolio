@@ -283,7 +283,7 @@ function Home() {
               style={{
                 transform: projectInView ? "none" : "translateX(-200px)",
                 opacity: projectInView ? 1 : 0,
-                transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+                transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.7s",
               }}
             >
               <div className="projectImage">
@@ -314,7 +314,7 @@ function Home() {
               style={{
                 transform: projectInView ? "none" : "translateX(-200px)",
                 opacity: projectInView ? 1 : 0,
-                transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.7s",
+                transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.9s",
               }}
             >
               <div className="projectImage">
@@ -345,7 +345,7 @@ function Home() {
               style={{
                 transform: projectInView ? "none" : "translateX(-200px)",
                 opacity: projectInView ? 1 : 0,
-                transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.9s",
+                transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 1.1s",
               }}
             >
               <div className="projectImage">
