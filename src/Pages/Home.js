@@ -19,6 +19,7 @@ import tesla from "./Images/tesla.png";
 import wordle from "./Images/wordle.png";
 import samsung from "./Images/samsung.png";
 import mystore from "./Images/mystore.png";
+import task from "./Images/task.png";
 function Home() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -252,7 +253,7 @@ function Home() {
               style={{
                 transform: projectInView ? "none" : "translateX(-200px)",
                 opacity: projectInView ? 1 : 0,
-                transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+                transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
               }}
             >
               <div className="projectImage">
@@ -271,6 +272,37 @@ function Home() {
                   </a>
                   <a
                     href="https://github.com/whydecode/Ecommerce"
+                    target="_blank"
+                  >
+                    Code
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              className="projectCard"
+              style={{
+                transform: projectInView ? "none" : "translateX(-200px)",
+                opacity: projectInView ? 1 : 0,
+                transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+              }}
+            >
+              <div className="projectImage">
+                <img src={task} alt="Ecommerce" />
+              </div>
+              <div className="projectInfo">
+                <h2>Task Management System</h2>
+                <p>MERN Stack Development</p>
+                <p>React, Node, Express, MongoDB</p>
+                <div className="projectButtons">
+                  <a
+                    href="https://task-management-zkh0.onrender.com/"
+                    target="_blank"
+                  >
+                    Link
+                  </a>
+                  <a
+                    href="https://github.com/whydecode/task-management"
                     target="_blank"
                   >
                     Code
