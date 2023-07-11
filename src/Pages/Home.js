@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./Home.css";
 import Typewriter from "typewriter-effect";
 import resume from "./Resume.pdf";
@@ -34,18 +35,73 @@ function Home() {
   const projectRef = useRef(null);
   const projectInView = useInView(projectRef, { once: true });
   const [projectClicked, setProjectClicked] = useState([false, false]);
+  const [isVisible, setIsVisible] = useState(false);
+
   const formRef = useRef(null);
   const formInView = useInView(formRef, { once: true });
   function handleClick(index) {
     projectClicked[index] = !projectClicked[index];
     setProjectClicked([...projectClicked]);
   }
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const temp = scrollTop > 250;
+      setIsVisible(temp);
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="complete">
       <div className="App">
         <header>
           <Navbar />
         </header>
+
+        <button
+          className="back-to-top"
+          onClick={scrollToTop}
+          style={{ display: isVisible ? "block" : "none" }}
+        >
+          <div className="text">
+            <span>Back</span>
+            <span>to</span>
+            <span>top</span>
+          </div>
+          <div className="clone">
+            <span>Back</span>
+            <span>to</span>
+            <span>top</span>
+          </div>
+          <svg
+            width="20px"
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+            ></path>
+          </svg>
+        </button>
+
         <div className="sideDiv" ref={mainRef}>
           <div
             className="middle"
@@ -431,7 +487,7 @@ function Home() {
                 className="contact-link"
               >
                 <img src={mail} className="contact-logo" alt="call" />
-                <span class="material-symbols-rounded"></span>
+                <span className="material-symbols-rounded"></span>
                 rahulagarwal2205@gmail.com
               </a>
             </div>
